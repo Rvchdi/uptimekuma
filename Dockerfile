@@ -5,6 +5,11 @@
 # Utilise l'image officielle d'Uptime Kuma (version majeure 1)
 FROM louislam/uptime-kuma:1
 
+# Force l'écoute sur IPv4 (0.0.0.0) au lieu de l'IPv6 par défaut (::)
+# et garantit l'utilisation du port 3001 pour éviter les erreurs de routage sur Railway.
+ENV UPTIME_KUMA_HOST=0.0.0.0
+ENV PORT=3001
+
 # Uptime Kuma écoute par défaut sur le port 3001
 EXPOSE 3001
 
