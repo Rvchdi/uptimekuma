@@ -1,0 +1,17 @@
+# ==============================================================================
+# Configuration Docker Compose pour héberger Uptime Kuma
+# ==============================================================================
+
+services:
+  uptime-kuma:
+    build: .
+    container_name: uptime-kuma
+    restart: always
+    ports:
+      - "3001:3001"
+    volumes:
+      - uptime-kuma-data:/app/data
+
+volumes:
+  uptime-kuma-data:
+    driver: local
