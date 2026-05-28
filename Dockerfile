@@ -5,6 +5,9 @@
 # Utilise l'image officielle d'Uptime Kuma (version majeure 1)
 FROM louislam/uptime-kuma:1
 
+# Crée le dossier de données requis par le script de démarrage officiel (chown)
+RUN mkdir -p /app/data
+
 # Force l'écoute sur IPv4 (0.0.0.0) au lieu de l'IPv6 par défaut (::)
 # et garantit l'utilisation du port 3001 pour éviter les erreurs de routage sur Railway.
 ENV UPTIME_KUMA_HOST=0.0.0.0
