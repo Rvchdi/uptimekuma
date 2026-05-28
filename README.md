@@ -33,5 +33,14 @@ Si vous préférez utiliser uniquement les commandes Docker classiques :
    docker run -d --restart=always -p 3001:3001 -v uptime-kuma-data:/app/data --name uptime-kuma mon-uptime-kuma
    ```
 
+### Option 3 : Déploiement sur Railway
+
+Si vous hébergez cette instance sur **Railway** :
+
+1. Connectez votre dépôt GitHub à Railway.
+2. Créez un **Volume Railway** (Railway Volume) depuis l'interface de votre service.
+3. Configurez le point de montage de ce volume sur `/app/data` (ceci est crucial pour que vos données de monitoring soient persistantes).
+4. Railway détectera automatiquement le `Dockerfile` et déploiera l'application sur le port `3001`.
+
 ---
 *Uptime Kuma est un outil de monitoring simple et performant développé par Louis Lam.*
